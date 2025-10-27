@@ -28,6 +28,8 @@ vim.g.mapleader = " "
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+vim.diagnostic.config({ virtual_text = true })
+
 vim.g.spell = true
 vim.g.spelloptions = "camel"
 cmd [[ set spell spelllang=en_ca ]]
@@ -530,35 +532,35 @@ require("lazy").setup({
 
 			local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-			require('lspconfig')['omnisharp'].setup({
+			vim.lsp.config('omnisharp', {
 				capabilities = capabilities
 			})
 
-			require('lspconfig')['rust_analyzer'].setup({
+			vim.lsp.config('rust_analyzer', {
 				capabilities = capabilities
 			})
 
-			require('lspconfig')['lua_ls'].setup({
+			vim.lsp.config('lua_ls', {
 				capabilities = capabilities
 			})
 
-			require('lspconfig')['terraformls'].setup({
+			vim.lsp.config('terraformls', {
 				capabilities = capabilities
 			})
 
-			require('lspconfig')['html'].setup({
+			vim.lsp.config('html', {
 				capabilities = capabilities
 			})
 
-			require('lspconfig')['fsautocomplete'].setup({
+			vim.lsp.config('fsautocomplete', {
 				capabilities = capabilities
 			})
 
-			require('lspconfig')['harper_ls'].setup({
+			vim.lsp.config('harper_ls', {
 				capabilities = capabilities
 			})
 
-			require('lspconfig')['vtsls'].setup({
+			vim.lsp.config('vtsls', {
 				capabilities = capabilities
 			})
 		end,
